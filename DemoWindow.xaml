@@ -1,0 +1,36 @@
+﻿<Window x:Class="ImageManipulator.DemoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Image Editor Beta" Height="600" Width="800">
+    <DockPanel Width="Auto" Height="Auto" LastChildFill="False">
+        <!--Top Menu Area-->
+        <Menu Width="Auto" Height="25" Background="Khaki" DockPanel.Dock="Top">
+            <!--File-->
+            <MenuItem Header="File">
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Exit"/>
+            </MenuItem>
+            <!--Help-->
+            <MenuItem Header="Help">
+                <MenuItem Header="About"/>
+                <MenuItem Header="Rakesh Jha"/>
+            </MenuItem>
+        </Menu>
+        <!--Bottom Status Bar-->
+        <StackPanel Width="Auto" Height="30" Background="DarkGray" Orientation="Horizontal" DockPanel.Dock="Bottom">
+            <Label Width="155" Height="23" Content="Status Bar Message...." FontFamily="Arial" FontSize="10"/>
+        </StackPanel>
+        
+        <!--Left Main Content area-->
+        <StackPanel Width="136" Height="Auto" Background="SteelBlue">
+            <Button Margin="2,8,2,2" Width="Auto" Height="26" Content="Load Image" Click="btnLoadImage_OnClick"/>
+            <Button Margin="2,2,2,2" Width="Auto" Height="26" Content="Optimize" Click="btnOptimizeImage_OnClick"/>
+            <Button Margin="2,2,2,2" Width="Auto" Height="26" Content="Reset" Click="btnResetImage_OnClick"/>
+        </StackPanel>
+        
+        <!--Image Display Area-->
+        <Border Name="CurrImageBorder" BorderThickness="2" BorderBrush="SteelBlue" DockPanel.Dock="Top" Visibility="Hidden">
+            <Image Margin ="10,10,10,10" Name="CurrImage" Stretch="UniformToFill"/>
+        </Border>
+    </DockPanel>
+</Window>
